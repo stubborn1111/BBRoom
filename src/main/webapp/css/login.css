@@ -1,0 +1,195 @@
+body {
+	background-color: #35434F;
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/* ================================ */
+.zhezhao {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 11111;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.zhuxiao {
+	position: fixed;
+	top: 32%;
+	left: 0;
+	width: 100%;
+	height: 170px;
+	background-color: #111111;
+	z-index: 1111111111;
+	color: #FFFFFF;
+	padding-top: 30px;
+}
+
+.zhuxiao {
+	height: 190px;
+}
+
+.line1 {
+	width: 300px;
+	margin-left: 25%;
+	font-size: 44px;
+	letter-spacing: 1.4px;
+	font-weight: 400;
+}
+
+.line1 span {
+	font-weight: 600;
+}
+
+.zhuxiao i {
+	font-size: 48px;
+	margin-right: 20px;
+}
+
+
+.line3 {
+	width: 200px;
+	height: 50px;
+	margin-top: 40px;
+	margin-left: 70%;
+}
+
+.line3_n,
+.line3_y {
+	width: 65px;
+	height: 45px;
+	line-height: 45px;
+	float: left;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.line3_y {
+	width: 80px;
+}
+
+.line3_y {
+	background-color: #93BE6E;
+	margin-right: 3px;
+}
+
+.line3_y:hover {
+	background-color: #89AD4D;
+	transition: 0.1s ease;
+}
+
+.tips {
+	margin-top: 10px;
+	padding-left: 380px;
+	font-size: 14px;
+	font-family: 仿宋;
+	letter-spacing: 1.3px;
+	font-weight: 100;
+}
+
+.tips i {
+	font-size: 20px;
+	color: #FFD559;
+	margin-right: 6px;
+
+}
+
+.line3_n {
+	background-color: #FFFFFF;
+	color: #020303;
+}
+
+/* ====================================== */
+.nishuo {
+	width: 15%;
+	padding: 10px;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	margin: auto;
+	position: absolute;
+	top: 40%;
+	left: 42.5%;
+	color: #283642;
+}
+
+#loginBox {
+	position: absolute;
+	width: 400px;
+	height: 250px;
+	background-color: #4A5661;
+	padding: 15px;
+	border-radius: 8px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#loginTop {
+	width: 100%;
+	height: 40px;
+	color: #FEFEFE;
+	font-size: 15px;
+}
+
+#welcome {
+	font-size: 20px;
+	font-weight: 700;
+	width: 100px;
+}
+
+#loginMiddle {
+	width: 100%;
+	height: 100px;
+	padding: 15px;
+}
+
+input {
+	width: 340px;
+	height: 30px;
+	margin-bottom: 20px;
+	color: #CCC;
+	background-color: rgba(0, 0, 0, 0.2);
+	border: none;
+	border-radius: 3px;
+	padding: 5px 15px;
+	outline: none;
+}
+
+input:focus {
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: 0.2s ease;
+}
+
+#loginF {
+	margin-bottom: 20px;
+}
+
+#loginF a {
+	width: 100%;
+	color: #FEFEFE;
+	font-size: 14px;
+}
+
+button {
+	border-radius: 3px;
+	background-color: #2d88a4;
+	color: #FEFEFE;
+	border: none;
+	width: 398px;
+	height: 33px;
+	font-size: 15px;
+	cursor: pointer;
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer">
+		<title>Personal Space</title>
+		<link rel="stylesheet" href="../css/bbRoom.css" type="text/css">
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="../js/bbRoom.js"></script>
+		<script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.js"></script>
+	</head>
+	<body>
+		<!-- 退出登录 -->
+		<div class="zhezhao">
+			<div class="tuichu">
+				<div class="line1">
+					<i class="fa fa-sign-out"></i><span id="">退出</span>
+					登录?
+				</div>
+				<div class="line2">
+					<div class="line2_y" onclick="tuichu()">
+						Yes
+					</div>
+					<div class="line2_n" onclick="hide1()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 注销账号 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">注销</span>账号?
+				</div>
+				<div class="tips">
+					<p>你确定要注销账号吗？注销账号后信息会全部销毁。</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="zhuxiao()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide2()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 发说说 -->
+		<div class="zhezhao" style="display: none;">
+			<div class="fashuoshuo">
+				<div id="box1">
+				</div>
+				<div class="publish">
+					<div class="publish_btn1" onclick="quxiao()">
+						取消
+					</div>
+					<div class="publish_btn" onclick="fss()">
+						发布
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zhezhao">
+			<div class="" style="position: absolute; top: 102px; left: 893px; cursor: pointer;" onclick="hide6()">
+				<i class="fa fa-times"></i>
+			</div>
+			<div class="jiuhenbang" style="padding:15px;margin-left: 430px;margin-top: 100px;width: 450px; height: 300px; background-color: white;border: 2px solid rgba(0,0,0,0.6); border-radius: 5px;">
+
+			</div>
+		</div>
+		<div class="side">
+			<div class="logo">
+				BB ROOM
+			</div>
+			<div class="name">
+				<!-- Liyc -->
+			</div>
+			<div class="per">
+				<i class="fa fa-dashboard"></i>个人空间
+			</div>
+			<div class="change" onclick="ziliao()">
+				<i class="fa fa-pencil"></i>个人资料
+			</div>
+			<div class="manage" onclick="guanli()">
+				<i class="fa fa-cogs"></i>管理
+			</div>
+		</div>
+		<div class="right">
+			<div class="top">
+				<div class="top1">
+					<div class="gj" onclick="gj()">
+						<i class="fa fa-power-off"></i>
+					</div>
+					<div class="bubble">
+						<div class="bubble1" onclick="show1()">
+							<i class="fa fa-sign-out"></i>退出登录
+						</div>
+						<div class="bubble2" onclick="show2()">
+							<i class="fa fa-window-close"></i>注销账号
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="aaaaa">
+				<div class="info">
+					<div class="info1">
+						<div class="info11">
+
+						</div>
+						<div class="info12">
+							Liyc
+						</div>
+					</div>
+					<div class="info3">
+						<div class="sex">
+							性别：<span id="sexx">
+								<!-- 男 -->
+							</span>
+						</div>
+						<div class="sex">
+							职业：<span id="pro">
+
+							</span>
+						</div>
+					</div>
+					<div class="info2" onclick="fariji()">
+						<i class="fa fa-edit"></i>写日记
+					</div>
+					<div class="info4">
+						<h4>Year</h4>
+						<div class="iiis">
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="info5">
+						<h4>Month</h4>
+						<div class="iis">
+							<div class="ii" onclick="months(this)" id="month1">
+								1月
+							</div>
+							<div class="ii" onclick="months(this)" id="month2">
+								2月
+							</div>
+							<div class="ii" onclick="months(this)" id="month3">
+								3月
+							</div>
+							<div class="ii" onclick="months(this)" id="month4">
+								4月
+							</div>
+							<div class="ii" onclick="months(this)" id="month5">
+								5月
+							</div>
+							<div class="ii" onclick="months(this)" id="month6">
+								6月
+							</div>
+							<div class="ii" onclick="months(this)" id="month7">
+								7月
+							</div>
+							<div class="ii" onclick="months(this)" id="month8">
+								8月
+							</div>
+							<div class="ii" onclick="months(this)" id="month9">
+								9月
+							</div>
+							<div class="ii" onclick="months(this)" id="month10">
+								10月
+							</div>
+							<div class="ii" onclick="months(this)" id="month11">
+								11月
+							</div>
+							<div class="ii" onclick="months(this)" id="month12">
+								12月
+							</div>
+							<div class="clear">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diary">
+					<div class="tiao">
+
+					</div>
+					<div class="time">
+						<!-- 12月 -->
+					</div>
+					<div class="diarys">
+						<!-- <div class="mes" style="position: relative;">
+							<div class="time1">
+								8:56
+							</div>
+							<div class="time2">
+								12
+							</div>
+							<div class="nizaizheshuo">
+								<i class="fa fa-trash"></i>
+							</div>
+							<div class="bubbles">
+								<div class="mess">
+									<p>Peace Will Come, This World Will Rest, Once We Have Togetherness Mauris sodales faucibus est, eu consequat
+										dolor tristique in. Quisque at lacus sed ligula semper iaculis.
+										In eu imperdiet ipsum.</p>
+								</div>
+							</div>
+							<div class="clear">
+
+							</div>
+						</div>
+						<div class="mes">
+							<div class="time1">
+								8:56
+							</div>
+							<div class="time2">
+								2
+							</div>
+							<div class="bubbles">
+								<div class="mess">
+									<p>Mauris sodales faucibus est, eu consequat dolor tristique in. Quisque at lacus sed ligula semper iaculis.
+										In
+										eu imperdiet ipsum. Ut vestibulum ornare venenatis.Aenean ultricies condimentum pellentesque. Maecenas
+										pulvinar
+										arcu vel tortor aliquet commodo. Phasellus dapibus nisl quis nunc pharetra, id lobortis arcu sagittis. Nunc
+										facilisis nibh non diam dictum, vitae iaculis tellus egestas. Curabitur vitae dui tempus, tempus metus vitae,
+										cursus nunc. In cursus odio vitae metus commodo, in posuere ante varius.</p>
+								</div>
+							</div>
+							<div class="clear">
+							</div>
+						</div>
+						<div class="mes">
+							<div class="time1">
+								8:56
+							</div>
+							<div class="time2">
+								2
+							</div>
+							<div class="bubbles">
+
+							</div>
+							<div class="clear">
+							</div>
+						</div>
+						<div class="mes">
+							<div class="time1">
+								8:56
+							</div>
+							<div class="time2">
+								2
+							</div>
+							<div class="bubbles">
+
+							</div>
+							<div class="clear">
+							</div>
+						</div>
+						<div class="mes">
+							<div class="time1">
+								8:56
+							</div>
+							<div class="time2">
+								2
+							</div>
+							<div class="bubbles">
+
+							</div>
+							<div class="clear">
+							</div>
+						</div> -->
+					</div>
+				</div>
+				<div class="clear">
+				</div>
+			</div>
+		</div>
+		<div class="fb-button" onclick="fariji()">
+			<span class="fa fa-edit"></span>
+			<div id="write">写日记</div>
+		</div>
+
+	</body>
+	<!-- 		<script type="text/javascript">
+	    const E = window.wangEditor
+	    const editor = new E('#box1')
+	    // 或者 const editor = new E( document.getElementById('div1') )
+	    editor.create()
+	</script> -->
+</html>

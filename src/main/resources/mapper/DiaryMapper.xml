@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<!--连接mapper接口-->
+<mapper namespace="com.hengzhi.dao.DiaryMapper">
+    <resultMap type="com.hengzhi.entity.Diary" id="diaryMap">
+        <result property="diaryId" column="diary_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="info" column="info"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+    <select id="selectDiary" resultMap="diaryMap">
+        select * from diary where diary_id = #{diaryId}
+    </select>
+
+    <delete id="deleteDiary">
+        delete from diary where diary_id = #{diaryId}
+    </delete>
+    <delete id="deleteUser">
+        delete from diary where user_id=#{userId}
+    </delete>
+    <!--    用户所有的diary-->
+    <select id="findDiaryByUserId" resultMap="diaryMap">
+        select *
+        from diary
+        where user_id = #{userId}
+    </select>
+    <!--    增加diary-->
+    <insert id="addDiary" parameterType="com.hengzhi.entity.Diary">
+        insert into
+        diary(user_id,info)
+        value(#{userId},#{info})
+    </insert>
+    <select id="selectTime" resultType="java.lang.String">
+        select time from diary where user_id = #{userId}
+    </select>
+</mapper>

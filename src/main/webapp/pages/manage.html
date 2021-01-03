@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Personal Center</title>
+		<link rel="stylesheet" href="../css/manage.css" type="text/css">
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="../js/manage.js"></script>
+	</head>
+	<body>
+		<!-- 退出登录 -->
+		<div class="zhezhao">
+			<div class="tuichu">
+				<div class="line1">
+					<i class="fa fa-sign-out"></i><span id="">退出</span>
+					登录?
+				</div>
+				<div class="line2">
+					<div class="line2_y" onclick="tuichu()">
+						Yes
+					</div>
+					<div class="line2_n" onclick="hide1()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 注销账号 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">注销</span>账号?
+				</div>
+				<div class="tips">
+					<p>你确定要注销账号吗？注销账号后信息会全部销毁。</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="zhuxiao()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide2()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--删除用户 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">删除</span>用户?
+				</div>
+				<div class="tips">
+					<p>你确定要删除此用户吗？删除用户后，此用户信息也会全部删除。</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="haolei()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide3()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改权限1 设置管理员 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">修改</span>权限?
+				</div>
+				<div class="tips">
+					<p>你确定要将此用户设置为管理员吗？</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="haolei1()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide4()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改权限2 取消任命管理员 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">修改</span>权限?
+				</div>
+				<div class="tips">
+					<p>你确定要将此用户取消任命管理员吗？</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="haolei1()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide5()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- 查看信息 -->
+		<div class="zhezhao">
+			<div class="xiugaimima">
+				<div class="xiugaimima1">
+					查看信息
+				</div>
+				<div class="xx">
+					<label>邮箱</label>
+					<div class="">
+						<input type="" disabled="disabled">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xx">
+					<label>昵称</label>
+					<div class="">
+						<input type="" disabled="disabled">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xx" id="xxz">
+					<label>性别</label>
+					<div class="">
+						<input type="" disabled="disabled">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xx" id="xxz">
+					<label>职业</label>
+					<div class="">
+						<input type="" disabled="disabled">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xiugaimima2">
+					<div class="close" onclick="hide6()">
+						关闭
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="side">
+			<div class="logo">
+				BB ROOM
+			</div>
+			<div class="name">
+				<!-- Liyc -->
+			</div>
+			<div class="per" onclick="room()">
+				<i class="fa fa-dashboard"></i>个人空间
+			</div>
+			<div class="change" onclick="ziliao()">
+				<i class="fa fa-pencil"></i>个人资料
+			</div>
+			<div class="manage">
+				<i class="fa fa-cogs"></i>管理
+			</div>
+		</div>
+		<div class="right">
+			<div class="top">
+				<div class="top1">
+					<div class="gj" onclick="gj()">
+						<i class="fa fa-power-off"></i>
+					</div>
+					<div class="bubble">
+						<div class="bubble1" onclick="show1()">
+							<i class="fa fa-sign-out"></i>退出登录
+						</div>
+						<div class="bubble2" onclick="show2()">
+							<i class="fa fa-window-close"></i>注销账号
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="managea" style="position: relative;">
+				<div class="list">
+					<div class="search">
+						<span class="input-group-addon">
+							<span class="fa fa-search"></span>
+						</span>
+						<input type="text" name="" id="" value="" / class="searchaa">
+						<span class="input-group-addon1" onclick="searcha()">
+							<span>搜索</span>
+						</span>
+					</div>
+				</div>
+				<div class="">
+					<table border="" cellspacing="" cellpadding="" class="hai">
+						<thead>
+							<tr>
+								<th>邮箱</th>
+								<th>性别</th>
+								<th style="width: 150px;">职业</th>
+								<th>权限</th>
+								<th style="width: 270px;">操作</th>
+							</tr>
+						</thead>
+						<tbody id="tbodyy">
+							<!-- 	<tr>
+								<td class="userName"><strong>John Doe</strong></td>
+								<td>男</td>
+								<td>null</td>
+								<td>权限</td>
+								<td>
+									<button type="button" class="xg"><span class="fa fa-pencil"></span></button>
+									<button type="button" class="sc"><span class="fa fa-times"></span></button>
+									<button type="button" class="qx">修改权限</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="userName"><strong>Dmitry Ivaniuk</strong></td>
+								<td>男</td>
+								<td>null</td>
+								<td>权限</td>
+								<td><button type="button" class="xg"><span class="fa fa-pencil"></span></button>
+									<button type="button" class="sc"><span class="fa fa-times"></span></button>
+									<button type="button" class="qx">修改权限</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="userName"><strong>Nadia Ali</strong></td>
+								<td>男</td>
+								<td>null</td>
+								<td>权限</td>
+								<td><button type="button" class="xg"><span class="fa fa-pencil"></span></button>
+									<button type="button" class="sc"><span class="fa fa-times"></span></button>
+									<button type="button" class="qx">修改权限</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="userName"><strong>John Doe</strong></td>
+								<td>男</td>
+								<td>null</td>
+								<td>权限</td>
+								<td>
+									<button type="button" class="xg"><span class="fa fa-pencil"></span></button>
+									<button type="button" class="sc"><span class="fa fa-times"></span></button>
+									<button type="button" class="qx">修改权限</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="userName"><strong>John Doe</strong></td>
+								<td>男</td>
+								<td>null</td>
+								<td>权限</td>
+								<td><button type="button" class="xg"><span class="fa fa-pencil"></span></button>
+									<button type="button" class="sc"><span class="fa fa-times"></span></button>
+									<button type="button" class="qx">修改权限</button>
+								</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+				<div class="fenye">
+					<div class="fenye1">
+						<div class="zuiqian" onclick="diyiye()">
+							<i class="fa fa-angle-double-left"></i>
+						</div>
+						<div class="qian" onclick="shangyiye()">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="tiaozhuan">
+							<input type="" name="" id="shuruyeshu" value="" />
+						</div>
+						<div class="tiaozhuan1" onclick="shuruys()">
+							跳转
+						</div>
+						<div class="zongyeshu">
+							共10页
+						</div>
+						<div class="dangqianye">
+							第2页
+						</div>
+						<div class="hou" onclick="xiayiye()">
+							<i class="fa fa-angle-right"></i>
+						</div>
+						<div class="zuihou" onclick="zuihouyiye()">
+							<i class="fa fa-angle-double-right"></i>
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+
+				</div>
+				<div class="fenye">
+					<div class="fenye1">
+						<div class="zuiqian" onclick="diyiye1()">
+							<i class="fa fa-angle-double-left"></i>
+						</div>
+						<div class="qian" onclick="shangyiye1()">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="tiaozhuan">
+							<input type="" name="" id="shuruyeshu1" value="" />
+						</div>
+						<div class="tiaozhuan1" onclick="shuruys1()">
+							跳转
+						</div>
+						<div class="zongyeshu">
+							共10页
+						</div>
+						<div class="dangqianye">
+							第2页
+						</div>
+						<div class="hou" onclick="xiayiye1()">
+							<i class="fa fa-angle-right"></i>
+						</div>
+						<div class="zuihou" onclick="zuihouyiye1()">
+							<i class="fa fa-angle-double-right"></i>
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    由于大部分配置都已经整合到spring配置文件中，这里只需要做很少的配置-->
+    <settings>
+        <!-- 开启日志，使用log4j日志格式-->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    <!--自动添加前置包名，这里一般写到自己的实体类包下-->
+    <typeAliases>
+        <typeAlias alias="User" type="com.hengzhi.entity.User"/>
+        <typeAlias alias="Integer" type="java.lang.Integer"/>
+        <typeAlias alias="String" type="java.lang.String"/>
+        <typeAlias alias="ArrayList" type="java.util.ArrayList"/>
+        <typeAlias alias="List" type="java.util.List"/>
+    </typeAliases>
+</configuration>
+

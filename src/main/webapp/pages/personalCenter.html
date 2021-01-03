@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Personal Center</title>
+		<link rel="stylesheet" href="../css/per.css" type="text/css">
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="../js/per.js"></script>
+	</head>
+	<body>
+		<!-- 退出登录 -->
+		<div class="zhezhao">
+			<div class="tuichu">
+				<div class="line1">
+					<i class="fa fa-sign-out"></i><span id="">退出</span>
+					登录?
+				</div>
+				<div class="line2">
+					<div class="line2_y" onclick="tuichu()">
+						Yes
+					</div>
+					<div class="line2_n" onclick="hide1()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 注销账号 -->
+		<div class="zhezhao">
+			<div class="zhuxiao">
+				<div class="line1">
+					<i class="fa fa-window-close"></i><span id="">注销</span>账号?
+				</div>
+				<div class="tips">
+					<p>你确定要注销账号吗？注销账号后信息会全部销毁。</p>
+				</div>
+				<div class="line3">
+					<div class="line3_y" onclick="zhuxiao()">
+						Yes
+					</div>
+					<div class="line3_n" onclick="hide2()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 确定修改 -->
+		<div class="zhezhao">
+			<div class="tuichu">
+				<div class="line1">
+					<i class="fa fa-pencil"></i><span id="">确认</span>
+					修改?
+				</div>
+				<div class="line2">
+					<div class="line2_y" onclick="qrxg()">
+						Yes
+					</div>
+					<div class="line2_n" onclick="hide3()">
+						No
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改密码 -->
+		<div class="zhezhao">
+			<div class="xiugaimima">
+				<div class="xiugaimima1">
+					修改密码
+				</div>
+				<div class="xx">
+					<label>旧密码</label>
+					<div class="">
+						<input type="password" id="passold">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xx">
+					<label>新密码</label>
+					<div class="">
+						<input type="password" id="passnow" placeholder="以字母开头6~10位">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xx" id="xxz">
+					<label>确认密码</label>
+					<div class="">
+						<input type="password" id="passnew">
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xiugaimima2">
+					<div class="success" onclick="xiugaia()">
+						确认修改
+					</div>
+					<div class="close" onclick="hide4()">
+						关闭
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改头像 -->
+		<div class="zhezhao">
+			<div class="xiugaimima">
+				<div class="xiugaimima1">
+					修改头像
+				</div>
+				<div class="xx">
+					<label>选择文件</label>
+					<div class="changePP">
+					<div class="changePPP">
+						选择文件
+						<input type="file" name="" id="upload_file" name="img" title="" accept="image/*"/>
+					</div>
+						
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div class="xiugaimima2">
+					<div class="success" id="changeBtn" onclick="nansil()">
+						确认修改
+					</div>
+					<div class="close" onclick="hide5()">
+						关闭
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="side">
+			<div class="logo">
+				BB ROOM
+			</div>
+			<div class="name">
+				<!-- Liyc -->
+			</div>
+			<div class="per" onclick="room()">
+				<i class="fa fa-dashboard"></i>个人空间
+			</div>
+			<div class="change">
+				<i class="fa fa-pencil"></i>个人资料
+			</div>
+			<div class="manage" onclick="guanli()">
+				<i class="fa fa-cogs"></i>管理
+			</div>
+		</div>
+		<div class="right">
+			<div class="top">
+				<div class="top1">
+					<div class="gj" onclick="gj()">
+						<i class="fa fa-power-off"></i>
+					</div>
+					<div class="bubble">
+						<div class="bubble1" onclick="show1()">
+							<i class="fa fa-sign-out"></i>退出登录
+						</div>
+						<div class="bubble2" onclick="show2()">
+							<i class="fa fa-window-close"></i>注销账号
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 修改资料主体部分 -->
+			<div class="hhh" style="margin-top: 65px;">
+				<!-- 				<div class="hhhh">
+				</div>
+				<div class="hhhhh">
+					<div class="nc">
+						<div class="abb">
+							昵称
+						</div>
+						<div class="qian qian1">
+							<i><img src="../img/后台7.png"></i>
+						</div>
+						<div class="ab">
+							<input type="" name="" id="" value="" />
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="xb">
+						<div class="abb">
+							性别
+						</div>
+						<div class="ab">
+							<div class="xxx">
+								男:
+							</div>
+							<div class="" style="float: left; margin-right: 30px;">
+								<input type="radio" id="checkbox-1-1" class="regular-checkbox" name="sex"><label for="checkbox-1-1"></label>
+							</div>
+							<div class="xxx">
+								女:
+							</div>
+							<div class="" style="float: left;">
+								<input type="radio" id="checkbox-1-2" class="regular-checkbox" name="sex"><label for="checkbox-1-2"></label>
+							</div>
+							<div class="clear">
+
+							</div>
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="zy">
+						<div class="abb">
+							职业
+						</div>
+						<div class="qian">
+							<i><img src="../img/身份认证.png"></i>
+						</div>
+						<div class="ab">
+							<input type="" name="" id="" value="" />
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+
+				</div>
+				<div class="bo">
+					<div class="sub">
+						提交
+					</div>
+				</div>
+			 -->
+				<div class="hhh1">
+					<div class="m1">
+						<div class="m11">
+							<!-- <h3><span class="fa fa-user"></span> nishuosha</h3> -->
+						</div>
+						<div class="headImg">
+							<!-- <img src="../img/user3.jpg"> -->
+						</div>
+					</div>
+					<div class="m3">
+						<label>邮箱</label>
+						<div class="m32">
+							<input type="text" value="1343385202@qq.com" disabled="" id="youxiang">
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="m2">
+						<div class="changeP" onclick="show5()">
+							修改头像
+							<!-- <input type="file" name="" id="upload_file" name="img" title="" accept="image/*"/> -->
+						</div>
+					</div>
+					<!-- 				<div class="m3">
+					<label>邮箱</label>
+					<div class="m32">
+						<input type="text" value="1343385202@qq.com" disabled="">
+					</div>
+					<div class="clear">
+						
+					</div>
+				</div> -->
+					<div class="m4">
+						<div class="changeP" onclick="show4()">
+							修改密码
+						</div>
+					</div>
+				</div>
+				<div class="hhh2">
+					<div class="mm1">
+						<div class="m11" style="margin-left: 25px; margin-top: 20px;">
+							<h3><span class="fa fa-pencil"></span> 修改资料</h3>
+						</div>
+						<div class="mm11">
+							<p>在这里，你能够修改你的个人资料，点击save保存</p>
+						</div>
+					</div>
+					<div class="mm2">
+						<label>邮箱</label>
+						<div class="">
+							<input type="text" value="1343385202@qq.com" disabled="" id="youxiang1">
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="mm2">
+						<label>昵称</label>
+						<div class="nicheng1">
+							<input type="text" value="" placeholder="">
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="mm3">
+						<label>性别</label>
+						<div class="nannv">
+							<div class="xxx">
+								男:
+							</div>
+							<div class="hq" style="float: left; margin-right: 30px;">
+								<input type="radio" id="checkbox-1-1" class="regular-checkbox" name="sex"><label for="checkbox-1-1"></label>
+							</div>
+							<div class="xxx">
+								女:
+							</div>
+							<div class="hq" style="float: left;">
+								<input type="radio" id="checkbox-1-2" class="regular-checkbox" name="sex"><label for="checkbox-1-2"></label>
+							</div>
+							<div class="clear">
+
+							</div>
+						</div>
+					</div>
+					<div class="mm4">
+						<label>职业</label>
+						<div class="nn">
+							<textarea>
+
+							</textarea>
+						</div>
+						<div class="clear">
+
+						</div>
+					</div>
+					<div class="mm5">
+						<div class="" onclick="show3()">
+							Save
+						</div>
+
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+
+			</div>
+			<div class="clear">
+
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

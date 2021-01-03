@@ -1,0 +1,136 @@
+.clear{
+    clear: both;
+}
+#top{
+	width: 100%;
+	height: 75px;
+	background-color: #fff;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+	padding-left:40px;
+}
+.logo{
+	float: left;
+	color: #606370;
+	font-size: 25px;
+	line-height: 75px;
+	font-family: "arial, helvetica, sans-serif";
+}
+.find{
+	text-align: center;
+	float: left;
+	border-top: 3px solid #e34724;
+	width: 70px;
+	margin-left: 100px;
+	line-height: 66px;
+	color: #4A5661;
+	cursor: pointer;
+}
+.in{
+	text-align: center;
+	float: left;
+	width: 70px;	
+	margin-left:60px;
+	line-height: 75px;
+	color: #a6b3b8;
+	cursor: pointer;
+}
+.in:hover{
+	line-height: 66px;
+	color: #4A5661;
+	border-top: 3px solid #e34724;
+	transition: ease 0.2s;
+}
+.yz{
+	width: 150px;
+	height: 40px;
+	line-height: 38px;
+	background-color: #E34724;
+	border-radius: 0 20px 20px 0;
+	color: #FFFFFF;
+	margin-top: 40px;
+}
+.yz span{
+	font-size: 20px;
+	margin: 0px 15px;
+	line-height: 38px;
+}
+.yx input{
+	float: left;
+	width: 340px;
+	height: 30px;
+	margin-bottom: 30px;
+	color: #606370;
+	background-color: rgba(101, 101, 101, 0.1);
+	border: none;
+	border-radius: 3px;
+	padding: 5px 15px;
+	outline:none;
+}
+	
+.yzm1{
+	float: left;
+}
+.yzm input{
+	float: left;
+	width: 165px;
+	height: 30px;
+	margin-bottom: 30px;
+	color: #606370;
+	background-color: rgba(101, 101, 101, 0.1);
+	border: none;
+	border-radius: 3px;
+	padding: 5px 15px;
+	outline:none;
+}
+.yzm button{
+	text-align: center;
+	float: left;
+	border-radius: 3px;
+	background-color: #FEFEFE;
+	border:1px solid rgba(101, 101, 101, 0.4);
+	color: #606370;
+	width: 150px;
+	height: 35px;
+	font-size: 13px;
+	cursor: pointer;
+	margin-left: 20px;
+}
+.sr{
+	width: 470px;
+	height: 300px;
+	padding: 40px;
+	margin-left: 370px;
+	margin-top: 40px;
+}
+.cc{
+	text-align: center;
+	float: left;
+	width: 80px;
+	color: #606370;
+	font-size: 15px;
+	line-height: 40px;
+}
+#loginButton button{
+	border-radius: 3px;
+	background-color: #E34724;
+	color: #FEFEFE;
+	border: none;
+	width: 440px;
+	height: 33px;
+	font-size: 15px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+	
+#check{
+	float: left;
+	width: 340px;
+	height: 30px;
+	margin-bottom: 30px;
+	color: #606370;
+	background-color: rgba(101, 101, 101, 0.1);
+	border: none;
+	border-radius: 3px;
+	padding: 5px 15px;
+	outline:none;
+}

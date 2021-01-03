@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<!--连接mapper接口-->
+<mapper namespace="com.hengzhi.dao.UserMapper">
+
+    <resultMap type="com.hengzhi.entity.User" id="userMap">
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="perms" column="perms" jdbcType="VARCHAR"/>
+        <result property="profession" column="profession" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="whetherChange" column="whether_change" jdbcType="VARCHAR"/>
+        <result property="headImageUrl" column="headImageUrl" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="userResult">
+        user_id,username,email,profession,sex,whetherChange,headImageUrl
+    </sql>
+
+    <!-- 查找用户邮箱是否存在-->
+    <select id="findUserByEmail" resultMap="userMap">
+        select * from user where email=#{email}
+    </select>
+    <select id="findUserByUserId" resultMap="userMap">
+        select *
+        from user
+        where user_id = #{userId}
+    </select>
+    <!--用户注册-->
+    <insert id="insertUser" parameterType="com.hengzhi.entity.User">
+         insert into
+         user(email, password, salt)
+         value (#{email},#{password},#{salt})
+    </insert>
+    <!--用户修改密码-->
+    <update id="updatePassword">
+        update user
+        set password=#{newPassword}
+        where user_id=#{userId,jdbcType=BIGINT}
+    </update>
+    <!--    个人信息的修改-->
+    <update id="userUpdate" parameterType="com.hengzhi.entity.User">
+        update user
+        <set>
+            <if test="username!=null and username != ''">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="email!=null and email != ''">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="perms!=null and perms != ''">
+                perms = #{perms,jdbcType=VARCHAR},
+            </if>
+            <if test="sex!=null and sex != ''">
+                sex = #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="number!=null and number != ''">
+                number = #{number,jdbcType=BIGINT},
+            </if>
+            <if test="profession!=null and profession != ''">
+                profession = #{profession,jdbcType=VARCHAR},
+            </if>
+            <if test="headImageUrl!=null and headImageUrl != ''">
+                headImageUrl = #{headImageUrl,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=BIGINT}
+    </update>
+    <update id="setZero" parameterType="Integer">
+    update user set number=0, whether_change="NO" where user_id=#{userId}
+</update>
+
+    <!--管理员操作-->
+    <!--管理员界面进行模糊搜索后用户的分页-->
+    <select id="findUser" resultMap="userMap">
+        select * from user
+<!--        <if test="vagueName!=null and vagueName!=''">-->
+            where email like concat('%',#{vagueName},'%')
+<!--        </if>-->
+        LIMIT #{start},5;
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        select count(*) from user
+<!--        <if test="vagueName!=null and vagueName!=''">-->
+            where email like concat('%',#{vagueName},'%')
+<!--        </if>-->
+    </select>
+
+    <!--信息展示-->
+    <select id="findAll" resultMap="userMap">
+        select * from user
+        LIMIT #{start},5;
+    </select>
+
+    <select id="getTotalCount1" resultType="int">
+        select count(*) from user
+    </select>
+
+    <!--修改权限-->
+    <update id="updatePerms">
+        update user set perms = #{perms} where user_id = #{userId}
+    </update>
+    <select id="findUserById" resultMap="userMap">
+        select * from user where user_id = #{userId}
+    </select>
+
+    <!--删除用户-->
+    <delete id="deleteUser">
+        delete from user where user_id = #{userId}
+    </delete>
+<update id="whetherChange">
+      update user set whether_change="YES" where user_id=#{userId}
+</update>
+
+</mapper>
